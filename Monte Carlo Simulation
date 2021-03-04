@@ -1,0 +1,18 @@
+6.1 [2 pt] You receive one of five distinct coupons uniformily at random each day. Use the Monte Carlo Method to estimate to within .01 days, 
+the expected number of days until you collect two copies of each of the five coupons. Record your answer in ANS61.
+
+
+import numpy as np
+
+res = []
+
+for i in range(10000):
+    coupon_dict = {1:0,2:0,3:0,4:0,5:0}
+    days = 0
+    while coupon_dict[1] < 2 or coupon_dict[2] < 2 or coupon_dict[3] < 2 or coupon_dict[4] < 2 or coupon_dict[5] < 2:
+        coupon_num = np.random.randint(1,6)
+        coupon_dict[coupon_num] += 1
+        days+=1
+    res.append(days)
+
+ANS61 = np.round(np.average(res),1)
