@@ -1,5 +1,5 @@
-6.1 [2 pt] You receive one of five distinct coupons uniformily at random each day. Use the Monte Carlo Method to estimate to within .01 days, 
-the expected number of days until you collect two copies of each of the five coupons. Record your answer in ANS61.
+#6.1 [2 pt] You receive one of five distinct coupons uniformily at random each day. Use the Monte Carlo Method to estimate to within .01 days, 
+#the expected number of days until you collect two copies of each of the five coupons. Record your answer in ANS61.
 
 
 import numpy as np
