@@ -1,0 +1,26 @@
+1.4 [2 pt] Impliment the function ThreeVec that takes in three 3 dimentional vectors each represented as an array,stacks the arrays vertically (each array is a row in a matrix), 
+and returns a list in which the first element is the rank of the matrix, the second element is the rank of its transpose, the third element is its determinant rounded to two decimal places, 
+the fourth element is the first element of its inverse rounded to two decimal places if its inverse exists and is the string "no inverse" if it does not exist.
+
+
+
+def ThreeVec(v1, v2, v3):
+    matrix = np.vstack((v1,v2,v3))
+    rank = np.linalg.matrix_rank(matrix)
+    matrix_t = matrix.transpose()
+    rank_t = np.linalg.matrix_rank(matrix_t)
+    matrix_det = np.around(np.linalg.det(matrix),2)
+    def matrix_first_el(matrix):
+        if matrix_det != 0:
+            return np.around(np.linalg.inv(matrix)[0][0],2)
+        else:
+            return 'no inverse'
+    
+    return [rank, rank_t,matrix_det, matrix_first_el(matrix)]
+ 
+ 
+v1=np.array([10,4.4,13])
+v2=np.array([-5,-3.1,2])
+v3=np.array([15,5.7,30])
+
+ThreeVec(v1, v2, v3)
